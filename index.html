@@ -17,7 +17,7 @@
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
         h1 { color: #fff; font-size: 3rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 5px; font-weight: 900; }
         p { color: #00d2ff; font-size: 1rem; margin-bottom: 40px; letter-spacing: 3px; }
-        .btn { display: inline-block; padding: 16px 50px; color: #00d2ff; text-decoration: none; font-weight: bold; border: 2px solid #00d2ff; border-radius: 10px; transition: 0.5s; text-transform: uppercase; cursor: pointer; background: transparent; }
+        .btn { display: inline-block; padding: 16px 50px; color: #00d2ff; text-decoration: none; font-weight: bold; border: 2px solid #00d2ff; border-radius: 10px; transition: 0.5s; text-transform: uppercase; cursor: pointer; background: transparent; font-size: 1rem; }
         .btn:hover { background: #00d2ff; color: #000; box-shadow: 0 0 50px rgba(0, 210, 255, 0.6); transform: scale(1.05); }
         .footer { margin-top: 50px; font-size: 0.65rem; color: rgba(255, 255, 255, 0.2); letter-spacing: 2px; }
     </style>
@@ -39,12 +39,12 @@
             const userId = urlParams.get('user');
 
             if (!userId) {
-                alert("Błąd: Uruchom stronę przez Discorda!");
+                alert("Błąd: Nie wykryto ID użytkownika! Uruchom stronę ponownie przez przycisk na Discordzie.");
                 return;
             }
 
-            // TUTAJ WKLEJ SWÓJ URL WEBHOOKA Z KROKU 1
-            const webhookURL = "TWOJ_URL_WEBHOOKA_TUTAJ";
+            // TUTAJ WKLEJ SWÓJ URL WEBHOOKA
+            const webhookURL = "https://discord.com/api/webhooks/1488959309327892561/yRUVSnYQV4mftFX6dOnkkoddadoieZr6vkH7YEv53wjkHP8V6FHJGGUBBmV3C8BSQ3k4";
 
             fetch(webhookURL, {
                 method: 'POST',
@@ -53,8 +53,11 @@
                     content: `!nadaj ${userId}` 
                 })
             }).then(() => {
-                alert("Weryfikacja wysłana! Zaraz otrzymasz rangę.");
+                alert("Weryfikacja pomyślna! Twoja ranga jest nadawana...");
                 window.location.href = "discord://-";
+            }).catch(err => {
+                alert("Wystąpił błąd podczas łączenia z Discordem.");
+                console.error(err);
             });
         }
     </script>
