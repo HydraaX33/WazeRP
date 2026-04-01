@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weryfikacja | WazeRP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* WIDEO W TLE */
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -2;
+            object-fit: cover;
+        }
+
+        /* NIEBIESKA NAKŁADKA PRZYCIEMNIAJĄCA */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* rgba(0, 10, 30, 0.6) -> Bardzo ciemny niebieski z 60% przezroczystości */
+            background: linear-gradient(135deg, rgba(0, 20, 50, 0.7), rgba(0, 0, 0, 0.8));
+            z-index: -1;
+        }
+
+        /* SZKLANA KARTA */
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            border-radius: 40px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            max-width: 480px;
+            width: 90%;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* LOGO */
+        .logo {
+            width: 160px;
+            height: auto;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 20px rgba(0, 210, 255, 0.5));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 3rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 900;
+            text-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+        }
+
+        p {
+            color: #00d2ff;
+            font-size: 1rem;
+            margin-bottom: 40px;
+            letter-spacing: 3px;
+            font-weight: 400;
+        }
+
+        /* PRZYCISK W STYLU NEON */
+        .btn {
+            display: inline-block;
+            padding: 16px 50px;
+            color: #00d2ff;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 2px;
+            background: transparent;
+            border: 2px solid #00d2ff;
+            border-radius: 10px;
+            transition: 0.5s;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background: #00d2ff;
+            color: #000;
+            box-shadow: 0 0 50px rgba(0, 210, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.2);
+            letter-spacing: 2px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <video autoplay muted loop id="bg-video">
+        <source src="tlo.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="card">
+        <img src="logo.png" alt="WazeRP Logo" class="logo">
+        
+        <h1>WazeRP</h1>
+        <p>AUTORYZACJA</p>
+        
+        <a href="discord://-" class="btn">Powrót do Discord</a>
+
+        <div class="footer">
+             &copy; 2026 WAZE COMMUNITY
+        </div>
+    </div>
+
+</body>
+</html>
