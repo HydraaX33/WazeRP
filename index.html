@@ -6,29 +6,11 @@
     <title>Weryfikacja | WazeRP</title>
     
     <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            background-color: #000;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Poppins', sans-serif;
             height: 100vh;
@@ -50,19 +32,18 @@
             object-fit: cover;
         }
 
-        /* NIEBIESKA NAKŁADKA PRZYCIEMNIAJĄCA */
+        /* NIEBIESKA WARSTWA PRZYCIEMNIAJĄCA */
         .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* rgba(0, 10, 30, 0.6) -> Bardzo ciemny niebieski z 60% przezroczystości */
-            background: linear-gradient(135deg, rgba(0, 20, 50, 0.7), rgba(0, 0, 0, 0.8));
+            background: linear-gradient(135deg, rgba(0, 20, 50, 0.75), rgba(0, 0, 0, 0.85));
             z-index: -1;
         }
 
-        /* SZKLANA KARTA */
+        /* KARTA ŚRODKOWA */
         .card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(15px);
@@ -71,7 +52,7 @@
             border-radius: 40px;
             padding: 60px 40px;
             text-align: center;
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
             max-width: 480px;
             width: 90%;
             animation: fadeIn 1.5s ease-out;
@@ -82,7 +63,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* LOGO */
+        /* LOGO Z ANIMACJĄ PŁYWANIA */
         .logo {
             width: 160px;
             height: auto;
@@ -103,7 +84,6 @@
             text-transform: uppercase;
             letter-spacing: 5px;
             font-weight: 900;
-            text-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
         }
 
         p {
@@ -111,10 +91,9 @@
             font-size: 1rem;
             margin-bottom: 40px;
             letter-spacing: 3px;
-            font-weight: 400;
         }
 
-        /* PRZYCISK W STYLU NEON */
+        /* PRZYCISK NEONOWY */
         .btn {
             display: inline-block;
             padding: 16px 50px;
@@ -143,7 +122,6 @@
             letter-spacing: 2px;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -155,15 +133,10 @@
 
     <div class="card">
         <img src="logo.png" alt="WazeRP Logo" class="logo">
-        
         <h1>WazeRP</h1>
         <p>AUTORYZACJA</p>
-        
         <a href="discord://-" class="btn">Powrót do Discord</a>
-
-        <div class="footer">
-             &copy; 2026 WAZE COMMUNITY
-        </div>
+        <div class="footer">&copy; 2026 WAZE COMMUNITY</div>
     </div>
 
 </body>
